@@ -29,8 +29,17 @@
 `git request-pull main git@github.com:SeeChen/WanderSnap.git`
 > Send a **PR** to the administrator to integrate your code. If you don't know your repository_url, check it using `git remote -v`.
 
+### 5. Pull from Remote
+#### 5.1 Fetch the latest changes from the remote repository
+`git fetch origin`
+> This command downloads the latest changes from the remote repository without merging them into your local branch.
+
+#### 5.2 Merge the fetched changes into your current branch
+`git merge origin/<branch_name>`
+> This merges the latest changes from the specified remote branch (e.g., `main`) into your local branch. Make sure to replace `<branch_name>` with the actual branch name you want to merge from (e.g., `main`).
+
 ---
 <div align="right">
 
-###### *Last Modified by [SeeChen](https://github.com/SeeChen/) @ 09-OCT-2024 16:50 UTC +08:00*
+###### *Last Modified by [SeeChen](https://github.com/SeeChen/) @ 10-NOV-2024 23:47 UTC +08:00*
 </div>
