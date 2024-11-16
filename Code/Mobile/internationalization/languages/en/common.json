@@ -1,0 +1,12 @@
+{
+    "language": "English",
+    "screens":{
+        "home": {
+            "title": "Home",
+            "text": {
+                "welcome": "Welcome to the home screen",
+                "welcomeBack": "Welcome Back"
+            }
+        }
+    }
+}

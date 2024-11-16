@@ -8,9 +8,10 @@ import FormField from "../../components/FormField";
 import CustomButton from "../../components/CustomButton";
 import { getCurrentUser, signIn } from "../../lib/appwrite";
 import { useGlobalContext } from "../../context/GlobalProvider";
+import { useUserAuth } from "../../context/UserAuthProvider";
 
 const SignIn = () => {
-  const { setUser, setIsLogged } = useGlobalContext();
+  const { setUser, setIsLogged } = useUserAuth();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [form, setForm] = useState({
     email: "",

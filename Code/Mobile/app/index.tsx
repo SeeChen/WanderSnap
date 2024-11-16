@@ -1,3 +1,6 @@
+
+import i18n from "../internationalization/i18n";
+
 import { StatusBar } from "expo-status-bar";
 import { Image, ScrollView, Text, View } from "react-native";
 import { Redirect, router } from "expo-router";
@@ -6,12 +9,12 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { images } from "../constants";
 import CustomButton from "../components/CustomButton";
 
-import { useGlobalContext } from "../context/GlobalProvider";
+import { useUserAuth } from "../context/UserAuthProvider";
 
 export default function App() {
-  const {loading, isLogged} = useGlobalContext();
+  const {loading, isLoggedIn} = useUserAuth();
 
-  if(!loading && isLogged) return <Redirect href="/home" />
+  if(!loading && isLoggedIn) return <Redirect href="/home" />
 
   return (
     <SafeAreaView className="bg-primary h-full">

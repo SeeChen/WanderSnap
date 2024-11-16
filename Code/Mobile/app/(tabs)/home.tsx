@@ -9,10 +9,14 @@ import Trending from "../../components/Trending";
 import { getAllPosts } from "../../lib/appwrite";
 import VideoCard from "../../components/VideoCard";
 import useAppwrite from "../../lib/useAppwrite";
+import { useTranslation } from "react-i18next";
 
 const Home = () => {
   const { data: posts, refetch } = useAppwrite(getAllPosts);
   // const { data: latestPosts} = useAppwrite(getLatestPosts);
+  const { t } = useTranslation('translation', {
+    keyPrefix: 'screens.home.text',
+  });
   const [refreshing, setRefreshing] = useState(false);
 
   const onRefresh = async () => {
@@ -34,7 +38,7 @@ const Home = () => {
             <View className="justify-between items-start flex-row mb-6">
               <View>
                 <Text className="font-pmedium text-sm text-gray-100">
-                  Welcome Back
+                  {t('welcomeBack')}
                 </Text>
                 <Text className="text-2xl font-psemibold text-white">
                   Yee Siang~
