@@ -7,10 +7,10 @@ import { images } from "../../constants";
 import FormField from "../../components/FormField";
 import CustomButton from "../../components/CustomButton";
 import { createUser } from "../../lib/appwrite";
-import { useGlobalContext } from "../../context/GlobalProvider";
+import { useUserAuth } from "../../context/UserAuthProvider";
 
 const SignUp = () => {
-  const { setUser, setIsLogged } = useGlobalContext();
+  const { setUser, setIsLogged } = useUserAuth();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [form, setForm] = useState({
     username:"",
@@ -19,10 +19,12 @@ const SignUp = () => {
   });
 
   const submit = async () => {
+    
+    console.log('form', form);
+    console.log(form);
     if(!form.username === ""|| !form.email === "" || !form.password === ""){
       Alert.alert('Error', 'Please fill in all the fields')
     }
-
     setIsSubmitting(true);
     try {
       const result = await createUser(form.email, form.password, form.username);

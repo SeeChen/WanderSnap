@@ -1,0 +1,11 @@
+{
+    "language": "Chinese",
+    "screens":{
+        "home": {
+            "title": "主页",
+            "text": {
+                "welcome": "欢迎来到主页"
+            }
+        }
+    }
+}
